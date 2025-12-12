@@ -38,28 +38,28 @@ function Footer() {
 
         <div className="footer__links">
           <div className="footer__linksColumn">
-            <a href="#">Audio and Subtitles</a>
-            <a href="#">Media Center</a>
-            <a href="#">Privacy</a>
-            <a href="#">Contact Us</a>
+            <a href="/Audio">Audio and Subtitles</a>
+            <a href="/Media">Media Center</a>
+            <a href="/privacy">Privacy</a>
+            <a href="/Contact">Contact Us</a>
           </div>
           <div className="footer__linksColumn">
-            <a href="#">Audio Description</a>
-            <a href="#">Investor Relations</a>
-            <a href="#">Legal Notices</a>
-            <a href="#">Corporate Information</a>
+            <a href="#/Audio">Audio Description</a>
+            <a href="/Investor">Investor Relations</a>
+            <a href="/Legal">Legal Notices</a>
+            <a href="/Corporate">Corporate Information</a>
           </div>
           <div className="footer__linksColumn">
-            <a href="#">Help Center</a>
-            <a href="#">Jobs</a>
-            <a href="#">Cookie Preferences</a>
-            <a href="#">Gift Cards</a>
+            <a href="/Help">Help Center</a>
+            <a href="/Jobs">Jobs</a>
+            <a href="/Cookie">Cookie Preferences</a>
+            <a href="/Gift">Gift Cards</a>
           </div>
           <div className="footer__linksColumn">
-            <a href="#">Account</a>
-            <a href="#">Ways to Watch</a>
-            <a href="#">Terms of Use</a>
-            <a href="#">Speed Test</a>
+            <a href="/Account">Account</a>
+            <a href="/Ways">Ways to Watch</a>
+            <a href="/Terms">Terms of Use</a>
+            <a href="/Speed">Speed Test</a>
           </div>
         </div>
 
@@ -68,7 +68,7 @@ function Footer() {
         </div>
 
         <div className="footer__copyright">
-          <p>© 2025 Netflix, Inc.</p>
+          <p>© 2025 Netflix Ethiopia</p>
           <p>This is a clone project for educational purposes only.</p>
         </div>
       </div>

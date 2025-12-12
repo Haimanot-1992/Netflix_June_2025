@@ -46,12 +46,6 @@ function Row({ title, fetchUrl, isLargeRow = false }) {
             backdrop_path: "/d5NXSklXo0qyIYkgV94XAgMIckC.jpg",
             poster_path: "/d5NXSklXo0qyIYkgV94XAgMIckC.jpg",
           },
-          {
-            id: 6,
-            title: "Movie 6",
-            backdrop_path: "/oAt6OtpwYCdG9eZCACa1gn2h939.jpg",
-            poster_path: "/oAt6OtpwYCdG9eZCACa1gn2h939.jpg",
-          },
         ];
         setMovies(mockMovies);
       }
@@ -62,20 +56,26 @@ function Row({ title, fetchUrl, isLargeRow = false }) {
     if (trailerUrl) {
       setTrailerUrl("");
     } else {
-      movieTrailer(movie?.title || movie?.name || movie?.orginal_name).then(
-        (url) => {
-          console.log(URL);
-          const urlParams = new URLSearchParams(new URL(url).search);
-          console.log(urlParams);
-          console.log(urlParams.get("v"));
-          setTrailerUrl(urlParams.get("v"));
-        }
-      );
+      // Clear previous trailer if any
+      setTrailerUrl(""); // Optional: clear immediately and then set new one, or keep the old until new is fetched.
+      movieTrailer(movie?.title || movie?.name || movie?.original_name || "")
+        .then((url) => {
+          if (url) {
+            console.log(url);
+            const urlParams = new URLSearchParams(new URL(url).search);
+            setTrailerUrl(urlParams.get("v"));
+          } else {
+            console.log("No trailer found for", movie.title);
+          }
+        })
+        .catch((error) => {
+          console.log("Error fetching trailer:", error);
+        });
     }
   };
   const opts = {
     height: "390",
-    width: "100%",
+    width: "640",
     playerVars: {
       autoplay: 1,
     },
